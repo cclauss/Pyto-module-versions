@@ -1,9 +1,9 @@
 Pyto-module-versions
 ====================
 
-![alt text](https://img.shields.io/badge/Python-3.6-blue.svg "Python 3.7")
+![alt text](https://img.shields.io/badge/Python-3.7-blue.svg "Python 3.7")
 
-Compare the version numbers of extra modules in [__Pyto__](https://github.com/ColdGrub1384/Pyto) with PyPI.
+Compare the version numbers of third party modules in [__Pyto__](https://github.com/ColdGrub1384/Pyto) with [__PyPI__](https://pypi.org) to see where upgrades may be required.
 
 Results:
 * https://pyup.io/account/repos/github/cclauss/Pyto-module-versions/
@@ -11,7 +11,7 @@ Results:
 
 ```
 Pyto version 10.0.4 running Python 3.7.0+ on iOS 12.1.4 on an iPad5,4.
-=========================================================
+======================================================================
 | module        | local       | PyPI        | 
 | name          | version     | version     | 
 | ------------- | ----------- | ----------- | 
