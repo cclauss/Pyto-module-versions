@@ -1,20 +1,24 @@
+
 # coding: utf-8
 import bs4, importlib, os, platform, plistlib, requests, sys  #, pkgutil
 
 # Translate from Python module --> PyPI module name
 pypi_dict = { 'bs4'       : 'beautifulsoup4',
+              'certifi'   : 'python-certifi',
               'dateutil'  : 'py-dateutil',
               'faker'     : 'Faker',
+              'rubicon'   : 'rubicon-objc',
               'sqlite3'   : 'pysqlite',
               'yaml'      : 'PyYAML',
               'xhtml2pdf' : 'pisa',
               'Crypto'    : 'pycrypto',
-              'PIL'       : 'Pillow' }
+              'PIL'       : 'Pillow',
+              'webencodings': 'python-webencodings'}
 
-modules = '''chardet colorama Cpython cycler dateutil distlib Down filelock freetype
-             idna jedi kiwisolver libpng matplotlib numpy pandas progress pyparsing
-             python-certifi pytz python-webencodings requests rubicon-objc six StaSh
-             stopit urllib3'''.split()
+modules = '''certifi chardet colorama cycler dateutil distlib
+             idna jedi kiwisolver matplotlib numpy pandas progress pyparsing
+              pytz webencodings requests rubicon six 
+             stopit urllib3'''.split()  # StaSh
 
 ## Removed: mechanize midiutil screenplain xhtml2pdf
 
@@ -76,7 +80,8 @@ print('=' * 16)
 '''
 
 def pyto_version():
-    plist = plistlib.readPlist(os.path.abspath(os.path.join(sys.executable, '..', 'Info.plist')))
+    with open(os.path.abspath(os.path.join(sys.executable, '..', 'Info.plist')), 'rb') as in_file:
+        plist = plistlib.load(in_file)
     return '{CFBundleShortVersionString} ({CFBundleVersion})'.format(**plist)
 
 print('```') # start the output with a markdown literal
@@ -92,6 +97,7 @@ print(fmt.format('name', 'version', 'version', ''))
 print(div)
 for module_name in modules:
     local_version = get_module_version(module_name)
+    
     pypi_version  = get_module_version_from_pypi(module_name)
     if '?' in local_version or '$' in local_version:
         advise = local_version
