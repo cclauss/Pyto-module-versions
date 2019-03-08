@@ -16,6 +16,6 @@ pytz==2018.7
 requests==2.21.0
 rubicon
 six==1.11.0
-stopit
+stopit==1.1.2
 urllib3==1.24.1
 webencodings==0.5.1
