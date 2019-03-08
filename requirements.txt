@@ -10,7 +10,7 @@ kiwisolver==1.0.1
 matplotlib==3.0.2
 numpy==1.16.1
 pandas==0.24.1
-progress==1.4
+progress==1.5
 pyparsing==2.3.1
 pytz==2018.7
 requests==2.21.0
