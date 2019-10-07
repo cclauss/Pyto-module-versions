@@ -12,7 +12,7 @@ numpy==1.16.1
 pandas==0.24.1
 progress==1.4
 pyparsing==2.3.1
-pytz==2018.7
+pytz==2019.3
 requests==2.21.0
 rubicon
 six==1.11.0
