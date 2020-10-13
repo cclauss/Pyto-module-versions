@@ -1,6 +1,6 @@
 certifi==2018.11.29
 chardet==2.2.1
-colorama==0.3.9
+colorama==0.4.4
 cycler==0.10.0
 dateutil==2.7.5
 distlib==0.2.7
